@@ -465,6 +465,8 @@ def get_link_from_media_id(self, media_id):
         "z": 51,
     }
     result = ""
+    media_id = media_id.split('_')[0]
+    media_id = int(media_id)
     while media_id:
         media_id, char = media_id // 64, media_id % 64
         result += list(alphabet.keys())[list(alphabet.values()).index(char)]
